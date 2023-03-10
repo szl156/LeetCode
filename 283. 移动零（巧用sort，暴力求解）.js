@@ -5,8 +5,20 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var moveZeroes = function (nums) {
-    nums.sort((a,b)=>b?0:-1)
+    // sort高级用法
+    nums.sort((a, b) => b ? 0 : -1)
+    // 暴力求解
+    let len = nums.length
+    for (let i = 0; i < len; i++) {
+        if (nums[i] === 0) {
+            nums.push(0)
+            nums.splice(i, 1)
+            i--
+            len--
+        }
+    }
 };
 const nums = [0, 0, 1, 0, 3, 12]
+
 moveZeroes(nums)
 console.log(nums)

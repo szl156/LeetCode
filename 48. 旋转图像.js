@@ -5,19 +5,21 @@
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var rotate = function (matrix) {
-    const n = matrix.length
-    // 水平轴翻转
-    for (let i = 0; i < Math.floor(n / 2); i++) {
-        for (let j = 0; j < n; j++) {
-            [matrix[i][j], matrix[n - i - 1][j]] = [matrix[n - i - 1][j], matrix[i][j]]
+    let step = 1
+    let map = new Map()
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix.length; j++) {
+            map.set(step++, matrix[j][i])
         }
     }
-    // 主对角线翻转
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < i; j++) {
-            [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]]
+    step = 1
+    for (let m = 0; m < matrix.length; m++) {
+        for (let n = 0; n < matrix.length; n++) {
+            matrix[m][n] = map.get(step++)
         }
+        matrix[m].reverse()
     }
+    return matrix
 
     // 暴力解法
     // for(let i=0;i<Math.floor(n/2);i++){
