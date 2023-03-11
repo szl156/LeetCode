@@ -4,7 +4,6 @@
  */
 var myAtoi = function (s) {
     const number = parseInt(s, 10);
-
     if (isNaN(number)) {
         return 0;
     } else if (number < Math.pow(-2, 31) || number > Math.pow(2, 31) - 1) {

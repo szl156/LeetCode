@@ -1,4 +1,12 @@
- < board.length; j += 3) {
-        //     arr.push(board[i].slice(j + 3))
-        // }
-        // console.log(arr);
+const n = haystack.length; m = needle.length
+    // for (let i = 0; i + m <= n; i++) {
+    //     let flag = true
+    //     for (let j = 0; j < m; j++) {
+    //         if (haystack[i + j] != needle[j]) {
+    //             flag = !flag
+    //             break
+    //         }
+    //     }
+    //     if (flag) return i
+    // }
+    // return -1

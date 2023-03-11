@@ -5,6 +5,7 @@
  * @return {number}
  */
 var reverse = function (x) {
+    // 函数法
     if (x === 0) return 0
     const ans = parseInt(('' + x).split('').reverse().join(''))
     return ans > 2 ** 31 - 1 ? 0 : ans * (x / Math.abs(x))

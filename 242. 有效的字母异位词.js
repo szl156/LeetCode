@@ -6,8 +6,21 @@
  * @return {boolean}
  */
 var isAnagram = function (s, t) {
-    return s.length !== t.length && [...s].sort().join('') === [...t].sort().join()
+    //哈希表
+    if (s.length !== t.length) return false
+    const arr = new Array(26).fill(0)
+    for (let i = 0; i < s.length; i++) {
+        arr[s.codePointAt(i) - 97]++
+    }
+    for (let i = 0; i < t.length; i++) {
+        arr[t.codePointAt(i) - 97]--
+        if (arr[t.codePointAt(i) - 97] < 0) return false
+    }
+    return true
+    // sort
+    // return s.length == t.length && [...s].sort().join('') === [...t].sort().join('')
 };
-const s = "a", t = "ab"
+const s = "anagram", t = "nagaram"
+// const s = "rat", t = "cat"
 // true
 console.log(isAnagram(s, t))
