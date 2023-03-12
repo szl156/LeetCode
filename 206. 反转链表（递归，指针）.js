@@ -16,7 +16,16 @@ function ListNode(val, next) {
  * @return {ListNode}
  */
 var reverseList = function (head) {
+    // 越界判断
     if (!head || !head.next) return head
+
+    // 递归
+    const newHead = reverseList(head.next)
+    head.next.next = head
+    head.next = null
+    return newHead
+
+    // 指针
     const node = head
     let next = node.next
     while (next) {

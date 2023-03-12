@@ -20,12 +20,20 @@ function ListNode(val) {
  * @return {boolean}
  */
 var hasCycle = function (head) {
+    // 哈希表
+    const map = new Map()
+    while (head) {
+        if (map.has(head)) return true
+        map.set(head, true)
+        head = head.next
+    }
+    return false
+    // 快慢指针
     if (!head) return false
     let fast = head.next, slow = head
     while (fast && fast.next) {
-        if (slow.next === fast.next.next) return true
+        if (slow === fast) return true
         fast = fast.next.next
         slow = slow.next
-    }
-    return false
+    } return false
 };
