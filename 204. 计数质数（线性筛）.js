@@ -17,7 +17,7 @@ var countPrimes = function (n) {
     return primes.length
     /* // 八进制巧解素数
     let count = n <= 2 ? 0 : 1
-    const isCom = new Int8Array(n)
+    const isCom = new Int8Array(n) 
     for (let i = 3; i < n; i += 2) {
         if (!isCom[i]) {
             count++
