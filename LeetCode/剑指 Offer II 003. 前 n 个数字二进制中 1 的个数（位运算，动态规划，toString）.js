@@ -11,6 +11,7 @@ var countBits = function (n) {
         res.push(res[smaller] + 1)
     }
     return res
+
     // 动态规划
     const dp = new Array(n + 1).fill(0)
     for (let i = 1; i <= n; i++) {
