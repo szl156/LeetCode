@@ -4,9 +4,6 @@
  * @return {boolean}
  */
 var isPalindrome = function (s) {
-    if (s.length <= 1) return true
-    // s = s.replace(/[\W_]/g, '').toLowerCase().split('')
-    // return s.join('') == s.reverse().join('')
     s = s.replace(/[\W_]/g, '').toLowerCase()
     let left = 0, right = s.length - 1
     while (left <= right) {

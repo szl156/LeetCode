@@ -5,17 +5,18 @@
  */
 var validPalindrome = function (s) {
     const arr = s.split('')
-    let left = 0, right = s.length - 1
-    function isPalindrome(left, right) {
-        for (; left < right; left++, right--) {
-            if (arr[left] !== arr[right]) return false
+    const isPalindrome = (left, right) => {
+        while (left < right) {
+            if (s[left] !== s[right]) return false
+            left++
+            right--
         }
         return true
     }
+    let left = 0, right = s.length - 1
     while (left < right) {
-        if (arr[left] !== arr[right]) {
-            return isPalindrome(left + 1, right) || isPalindrome(left, right - 1)
-        } else {
+        if (arr[left] !== arr[right]) return isPalindrome(left + 1, right) || isPalindrome(left, right - 1)
+        else {
             left++
             right--
         }

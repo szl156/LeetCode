@@ -8,8 +8,8 @@ var countSubstrings = function (s) {
     // 中心扩展O(n^2)
     let count = 0
     for (let i = 0; i < s.length; i++) {
-        for (let l = i, r = i; l >= 0 && s[l] === s[r]; l--, r++)count++
-        for (let l = i, r = i + 1; l >= 0 && s[l] === s[r]; l--, r++)count++
+        for (let left = i, right = i; s[right] === s[left] && left >= 0; left--, right++)count++
+        for (let left = i, right = i + 1; s[right] === s[left] && left >= 0; left--, right++)count++
     }
     return count
 
