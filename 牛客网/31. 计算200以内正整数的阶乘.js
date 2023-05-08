@@ -5,7 +5,8 @@ const fac = (n) => {
     return n * fac(n - 1)
 }
 console.log(BigInt(fac(n)).toString().replace('n',))
-if (n < 1 || n > 200) console.log('Error') else fn(n)
+if (n < 1 || n > 200) console.log('Error')
+else fn(n)
 
 function fn(n) {
     let res = n.toString()
@@ -30,7 +31,8 @@ function numberString(ans) {
         const current = parseInt(ans[i])
         cur += current
         const c = cur % 10
-        if (c === cur) cur = 0 else cur = (cur - c) / 10
+        if (c === cur) cur = 0
+        else cur = (cur - c) / 10
         res = c + res
     }
     if (cur !== 0) res = cur + res
