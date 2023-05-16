@@ -3,10 +3,7 @@
 // Solution(int[] nums) 使用整数数组 nums 初始化对象
 // int[] reset() 重设数组到它的初始状态并返回
 // int[] shuffle() 返回数组随机打乱后的结果
-/**
- * @param {number[]} nums
- */
-var Solution = function (nums) {
+var Solution = function () {
     this.nums = nums
 };
 
