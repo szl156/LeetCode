@@ -9,19 +9,13 @@
  * @return {number}
  */
 var distanceBetweenBusStops = function (distance, start, destination) {
-    let sum = 0, ans = 0
-    distance.map(value => sum += value)
-    if (start < destination) {
-        for (let i = start; i <= destination - 1; i++) {
-            ans += distance[i]
-        }
-    } else {
-        [start, destination] = [destination, start]
-        for (let i = start; i <= destination - 1; i++) {
-            ans += distance[i]
-        }
-    }
-    return ans < sum - ans ? ans : sum - ans
+    // if (start > distance.length || destination > distance.length) return
+    let innerDistance = start > destination ? distance.slice(destination, start) : distance.slice(start, destination)
+    let outerDistance = start > destination ? distance.slice(0, destination).concat(distance.slice(start, distance.length)) : distance.slice(0, start).concat(distance.slice(destination, distance.length))
+    let inner = 0, outer = 0
+    innerDistance.forEach(v => inner += v)
+    outerDistance.forEach(v => outer += v)
+    return Math.min(inner, outer)
 };
 const distance = [3, 6, 7, 2, 9, 10, 7, 16, 11], start = 6, destination = 2
 console.log(distanceBetweenBusStops(distance, start, destination))
