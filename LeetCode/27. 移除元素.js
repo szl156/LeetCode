@@ -9,13 +9,15 @@
  * @return {number}
  */
 var removeElement = function (nums, val) {
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === val) {
-            nums.splice(i, 1)
-            i--
+    let fast = 0, slow = 0
+    while (fast < nums.length) {
+        if (nums[fast] !== val) {
+            nums[slow] = nums[fast]
+            slow++
         }
+        fast++
     }
-    return nums.length
+    return slow
 };
 let nums = [0, 1, 2, 2, 3, 0, 4, 2], val = 2 // 2, nums = [2,2]
 console.log(removeElement(nums, val))

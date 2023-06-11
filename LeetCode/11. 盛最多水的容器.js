@@ -10,8 +10,8 @@
 var maxArea = function (height) {
     let max = 0, left = 0, right = height.length - 1
     while (left < right) {
-        let minHeight = height[left] < height[right] ? height[left++] : height[right--]
-        max = Math.max(max, minHeight * (right - left + 1))
+        let area = height[left] < height[right] ? height[left++] * (right - left + 1) : height[right--] * (right - left + 1)
+        max = Math.max(area, max)
     }
     return max
 };
