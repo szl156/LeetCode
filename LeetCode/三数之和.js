@@ -6,7 +6,7 @@ var threeSum = function (nums) {
     let ans = [];
     const len = nums.length;
     if (len < 3) return ans;
-    nums.sort((a, b) => a - b); // 排序
+    nums.sort((a, b) => a - b); // 01_排序算法
     for (let i = 0; i < len; i++) {
         if (nums[i] > 0) break; // 如果当前数字大于0，则三数之和一定大于0，所以结束循环
         if (i > 0 && nums[i] === nums[i - 1]) continue; // 去重

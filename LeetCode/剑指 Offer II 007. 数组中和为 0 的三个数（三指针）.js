@@ -6,7 +6,7 @@
  */
 var threeSum = function (nums) {
     if (nums.length < 3) return [];
-    // 排序
+    // 01_排序算法
     nums.sort((a, b) => a - b);
     var target = 0;
     var len = nums.length;
