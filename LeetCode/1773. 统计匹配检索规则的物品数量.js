@@ -14,14 +14,14 @@ ruleKey == "name" 且 ruleValue == namei 。
  * @return {number}
  */
 var countMatches = function (items, ruleKey, ruleValue) {
-    let count = 0
-    let map = {'type': 0, 'color': 1, 'name': 2}
-    items.forEach(item => {
-        if (item[map[ruleKey]] === ruleValue) count++
-    })
-    return count
+	let count = 0
+	let map = {'type': 0, 'color': 1, 'name': 2}
+	items.forEach(item => {
+		if (item[map[ruleKey]] === ruleValue) count++
+	})
+	return count
 };
 let items = [["phone", "blue", "pixel"], ["computer", "silver", "phone"], ["phone", "gold", "iphone"]],
-    ruleKey = "type", ruleValue = "phone" // 2
+	ruleKey = "type", ruleValue = "phone" // 2
 
 console.log(countMatches(items, ruleKey, ruleValue))
