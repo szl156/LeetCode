@@ -19,5 +19,5 @@ var arrayNesting = function (nums) {
     }
     return max
 };
-let A = [5, 4, 0, 3, 1, 6, 2]
-console.log(arrayNesting(A))  // 4
+let nums = [5, 4, 0, 3, 1, 6, 2]
+console.log(arrayNesting(nums))  // 4
